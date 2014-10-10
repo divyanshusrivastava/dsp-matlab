@@ -1,5 +1,5 @@
 %%Compressing Higher frequencies
-pom = imread('24.jpg');
+pom = imread('myself.jpg');
 gaussianfilter = fspecial ('gaussian',[7,7],5);
 gaussianpom = imfilter(pom, gaussianfilter, 'symmetric', 'conv');
 subplot(1, 2, 1), image(pom)
