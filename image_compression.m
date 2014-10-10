@@ -7,7 +7,8 @@ close all;
 clc;
 
 
-pic = imread('myself.jpg');
+%pic = imread('myself.jpg');
+pic = imread(uigetfile('../*.jpg'));
 
 origWidth = size(pic, 2);
 
