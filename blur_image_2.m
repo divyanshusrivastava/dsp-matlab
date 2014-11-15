@@ -4,7 +4,7 @@
 %%Compressing Higher frequencies
 clc;
 
-im = imread('image.jpg');
+im = imread('myself.jpg');
 gaussianfilter = fspecial ('gaussian',[7,7],5)
 
 
