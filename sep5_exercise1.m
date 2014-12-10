@@ -18,4 +18,4 @@ subplot(4,1,3),stem(plotter(1,:),plotter(4,:))
 title('UNIT DIGITAL IMPULSE delta(n-4) ');
 
 subplot(4,1,4),stem(plotter(1,:),2*plotter(3,:)-plotter(4,:))
-title('REQUIRED SIGNAL 2 * delta(n+2) - delta(n-4) ');
+title('X(n) = 2 * delta(n+2) - delta(n-4) ');

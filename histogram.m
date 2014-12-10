@@ -1,3 +1,7 @@
+%% Experiment 16
+
+%% Image Histogram
+
 clc;
 clear all;
 close all;
@@ -7,14 +11,14 @@ close all;
 I = imread('myself.jpg');
 I = rgb2gray(I);
 
-subplot(131),imshow(I),title('Input Image');
+imshow(I),title('Input Image');
 h = imhist(I,256);
-
-subplot(132),imhist(I),title('Histrogram - imhist function'),ylim('auto');
+figure
+subplot(121),imhist(I),title('Histrogram - imhist function'),ylim('auto');
 
 
 %Plotting using bar function
 h1 = h(1:10:256);
 horz = 1:10:256;
 
-subplot(133),bar(horz,h1),title('Histogram - bar function.');
+subplot(122),bar(horz,h1),title('Histogram - bar function.');

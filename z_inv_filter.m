@@ -1,19 +1,21 @@
-%% this script computes the inverse z-transform using long division methond
-% uses matlab's inbuilt function filter() 
+%% Experiment 28
+
+%% Z-Inverse using inbuilt filter ()
+% Using matlab's inbuilt function filter() 
 
 clear al;
 clc;
 close all;
 
+N = 4;
 
-N = input('Enter the length of output vector: ');
-
-num = input('Type in the numerator coefficients: ');
-den = input('Type in the denominator coefficients: ');
-
+num = [1 2 1];
+den = [2];
 
 x = [1 zeros(1, N-1)];
 y = filter(num, den, x);
 
-disp('Coefficients of the power series expansion: ');
-disp(y)
+stem(y),title('Coefficients of the power series expansion');
+
+%% Conclusion
+% Inverse z transformation using inbuilt filter() method computed correctly.

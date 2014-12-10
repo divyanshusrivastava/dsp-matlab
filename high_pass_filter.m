@@ -1,11 +1,12 @@
-%% Frequency domain Methods
-% 
+%% Experiment 24
+
+%% High Pass Filter
 
 clear all;
 clc;
 close all;
 
-%% reading image (grayscale)
+%% Reading image (grayscale)
 I = imread('myself.jpg');
 I = rgb2gray(I);
 
@@ -19,7 +20,7 @@ for u = 1:M
     end
 end
 
-%% finding H(u,v)
+%% Finding H(u,v)
 H = zeros(size(I));
 for u = 1:M
     for v = 1:N
@@ -27,20 +28,17 @@ for u = 1:M
     end
 end
 
-%% Take fft of the input image
+%% Processing
 F = fft2(I);
-
-%% Preprocessing
 F = fftshift(F);
-
-%% Multiplysing fft of the image and TF
 Y  = F.*H;
-
-%% preprocessing
 Y1 = ifftshift(Y);
-
-%% taking inverse
 y = ifft2(Y1);
 
+%% Displaying the results
 subplot(121),imshow(I),title('Original Image');
 subplot(122),imshow(uint8(y)),title('Output image');
+
+%% Conclusion
+% High Pass Filter Blocks low frequencies on the image, hence the image
+% looses its definitions.

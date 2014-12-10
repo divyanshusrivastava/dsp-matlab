@@ -1,3 +1,8 @@
+%% Experiment 25
+
+%% System Analysis
+% Analyse the system using impulse input response.
+
 clear all;
 clc;
 
@@ -11,10 +16,6 @@ subplot(311),stem(n,h);
 title('Impulse Response');
 xlabel('n');
 
-x = stepseq(0,-20, 120);
-subplot(312),stem(x);
-s = filter(b, a, x);
-subplot(313),stem(n,s);
-title('step response');
-xlabel('n');
-ylabel('s(n)');
+%% Conclusion
+% For a given system as a difference equation, impz() computes its unit
+% impulse response h(x).

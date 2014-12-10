@@ -1,17 +1,21 @@
-%% this script computes the inverse z-transform using long division methond
-% uses matlab's inbuilt function impz() 
+%% Experiment 27
+
+%% Computing the inverse z-transform using long division methond
+% using matlab's inbuilt function impz() 
 
 clear al;
 clc;
 close all;
 
 
-L = input('Enter the length of output vector: ');
+L = 4;
 
-num = input('Type in the numerator coefficients: ');
-den = input('Type in the denominator coefficients: ');
+num = [1 2 1];
+den = [2];
 
 [y,t] = impz(num,den,L);
 
-disp('Coefficients of the power series expansion ');
-disp(y');
+stem(y'),title('Coefficients of the power series expansion');
+
+%% Conclusion
+% Inverse z transformation using long division method computed correctly.

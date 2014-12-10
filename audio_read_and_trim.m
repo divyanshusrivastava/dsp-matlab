@@ -1,26 +1,35 @@
-%% Audio recording and trimming
+%% Experiment 29
 
-recobj = audiorecorder(48000, 16, 1, -1);
+%% MFCC of voiced speech signal
+clear all;
+fp = fopen('test.wav');
+fseek(fp,224000,-1);
+a = fread(fp,256);
 
-disp('start speaking');
+subplot(2,1,1);plot(a);title('voiced part of audio');
+xlabel('sample no. ');ylabel('Amplitude');
+b = fft(a);
+b1 = abs(b);
+c = log(b1);
+for i = 1:256,
+    f(i) = 22100/256*i;
+end
+for i = 1:256,
+    c1(i) = c(i);
+end
+ 
+for i = 1:256,
+    m(i) = 2595*log(1+f(i)/700);
+end
 
-recordblocking(recobj,5);
+subplot(2,1,2);plot(m,c1);title('Log spectrum');
+xlabel('Frequency in Mel scale');ylabel('Amplitude in');
+ 
+x=melcepst(a);
+figure;
+plot(x);title('MFCC using inbuilt functions');
+xlabel('Frequency in MEL scale');ylabel('Amplitude in dB');
 
-disp('End of Recording');
+%% Conclusion
+% Mel Frequency computation is correctly done
 
-data = getaudiodata(recobj);
-
-wavwrite(data,48000,16,'test1.wav');
-
-siz = wavread('test1.wav','size');
-
-tot = siz(1);
-
-s = ceil(tot*0.2);
-e = ceil(tot*0.7);
-
-[y, fs] = wavread('test1.wav',[s e]);
-
-wavwrite(y, 48000, 16, 'test.wav');
-
-disp('Sound is saved in test.wav file');

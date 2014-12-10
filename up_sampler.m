@@ -1,12 +1,10 @@
-%% up sampler...put L - 1 number of zeros in in the signal
-%% try to implement down sampling..
+%% Experiment 10
 
-clear all;
-clc;
-
-
-raw = input('Enter the sequence: ');
-L = input('Enter the value of L: ');
+%% Up Sampler
+% Insert L - 1 number of zeros in in the signal
+clear all;clc;
+raw = [1 2 3 2];
+L = 2;
 len = length(raw);
 
 new_len = ((len-1)*(L-1))+len;
@@ -20,5 +18,8 @@ for i=0:new_len-1
 end
 
 
-subplot(211),stem(raw);
-subplot(212),stem(data);
+subplot(211),stem(raw),title('Original Signal');
+subplot(212),stem(data),title('Up sampled signal (factor:2)');
+
+%% Conclusion
+% Input signal successfully up-sampled by a factor of 2

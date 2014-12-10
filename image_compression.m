@@ -1,14 +1,14 @@
-%% compressing an image
-% our eyes only see low frequencies, so we can remove higher frequencies
+%% Experiment 17
+
+%% Compressing an image
+% Our eyes only see low frequencies, so we can remove higher frequencies
 % without affecting the image mush to the end user.
 
 clear all;
 close all;
 clc;
 
-
-%pic = imread('myself.jpg');
-pic = imread(uigetfile('../*.jpg'));
+pic = imread('image_2.jpg');
 
 origWidth = size(pic, 2);
 

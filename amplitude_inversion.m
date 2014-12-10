@@ -1,6 +1,13 @@
+%% <h1>Experiment 1
+% Amplitude Conversion
+
+%% Rading the signal
 X = [1 2 3 4 5 6 7];
-%%amplitude conversion
 
-Y = -1 .* X
+%% Inverting the signal
+Y = -1 .* X;
 
-stem (Y)
+%% Displaying results
+subplot(121),stem(X),title('Original signal');
+subplot(122),stem(Y),title('Amplitude inverted signal');
+

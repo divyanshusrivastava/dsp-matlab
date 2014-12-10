@@ -1,12 +1,10 @@
-% this script computes the decrete time fourier transform of a digital
-% signal 
-% it assumes that the signal starts ftom n = 0;
+%% Experiment 20
 
+%% Discrete Time Fourier Transform
 clear all;
 clc;
 
-signal = input('Enter the signal: ');
-
+signal = [1 2 3 4 5];
 len = length(signal);
 
 omega = linspace(0,pi,100);
@@ -19,6 +17,11 @@ for i = 1:length(omega)
     end
 end
 
-plot(omega,X);
+subplot(211),stem(signal),title('Signal (Time Domain)');
+subplot(212),plot(omega,X),title('DTFT of signal (Freq. Domain)');
+
+%% Conclusion
+% DTFT of a Digital ignal transforms it to a continuous signal in
+% frequency domain. Freqency components of the signal are hence visible.
 
 
